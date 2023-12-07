@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background-color: #13adcc;
+        background-color: white;
         height: 300vh;
       }
       h1 {
@@ -37,12 +37,35 @@
     const h1 = document.querySelector("h1");
     const box = document.querySelector(".box");
 
-    window.addEventListener("mousemove", (event) => {
-      console.log(event.pageY, event.clientY);
+    let x = 0;
+    let y = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let speed = 0.04;
+
+    window.addEventListener("click", (event) => {
+      // console.log(event.pageY, event.clientY);
+
+      x = event.pageX;
+      y = event.pageY;
 
       h1.innerHTML = `x : ${event.pageX} y : ${event.pageY}`;
-      box.style.top = `${event.pageY}px`;
-      box.style.left = `${event.pageX}px`;
+
+      box.style.top = `${targetY.toFixed(2)}px`;
+      box.style.left = `${targetX}px`;
     });
+
+    // const loop = () => {
+    //   targetX += (x - targetX) * speed;
+    //   targetY += (y - targetY) * speed;
+
+    //   console.log(targetX, targetY.toFixed(2));
+
+    //   box.style.top = `${targetY.toFixed(2)}px`;
+    //   box.style.left = `${targetX}px`;
+
+    //   window.requestAnimationFrame(loop);
+    // };
+    // loop();
   </script>
 </html>
