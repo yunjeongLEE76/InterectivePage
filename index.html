@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
       body {
-        background-color: white;
+        background-color: rgb(218, 215, 215);
         height: 300vh;
       }
       h1 {
@@ -20,9 +20,23 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transition: all 1.5s ease-in-out;
       }
       .box img {
         width: 160px;
+      }
+
+      button {
+        padding: 40px 100px;
+        background-color: black;
+        color: white;
+        font-size: 30px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      button:hover {
+        padding: 45px 120px;
+        background-color: rgb(255, 249, 179);
       }
     </style>
   </head>
@@ -31,41 +45,24 @@
     <div class="box">
       <img src="./butterfly.gif" alt="나비" />
     </div>
+    <button>버튼</button>
   </body>
 
   <script>
     const h1 = document.querySelector("h1");
     const box = document.querySelector(".box");
+    const button = document.querySelector("button");
 
-    let x = 0;
-    let y = 0;
-    let targetX = 0;
-    let targetY = 0;
-    let speed = 0.04;
-
-    window.addEventListener("click", (event) => {
-      // console.log(event.pageY, event.clientY);
-
-      x = event.pageX;
-      y = event.pageY;
-
-      h1.innerHTML = `x : ${event.pageX} y : ${event.pageY}`;
-
-      box.style.top = `${targetY.toFixed(2)}px`;
-      box.style.left = `${targetX}px`;
+    button.addEventListener("mouseenter", () => {
+      // box.style.top = `${event.pageY}px`;
+      // box.style.left = `${event.pageX}px`;
     });
 
-    // const loop = () => {
-    //   targetX += (x - targetX) * speed;
-    //   targetY += (y - targetY) * speed;
+    window.addEventListener("click", (event) => {
+      h1.innerHTML = `x : ${event.pageX} y : ${event.pageY}`;
 
-    //   console.log(targetX, targetY.toFixed(2));
-
-    //   box.style.top = `${targetY.toFixed(2)}px`;
-    //   box.style.left = `${targetX}px`;
-
-    //   window.requestAnimationFrame(loop);
-    // };
-    // loop();
+      box.style.top = `${event.pageY}px`;
+      box.style.left = `${event.pageX}px`;
+    });
   </script>
 </html>

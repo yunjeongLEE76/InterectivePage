@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #2f6557;
+        overflow: hidden;
+      }
+      .gateBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        color: white;
+        width: 400px;
+        /* padding: 30px; 패딩 때문에 red컬러가 보이기때문에 지움 첨에 잘보기위해서 넣었던 거임*/
+      }
+      .top {
+        background-color: #4e7c70;
+        padding: 20px;
+        border: 2px solid white;
+        text-align: center;
+      }
+      .bottom {
+        border: 2px solid white;
+        border-top: none;
+        background-color: #4e7c70;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .bottom a {
+        color: white;
+        text-decoration: none;
+        padding: 20px 0;
+        width: 50%;
+        text-align: center;
+      }
+      .line {
+        border: 1px solid white;
+      }
+      .cursorItem {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1000;
+      }
+      .circle {
+        position: fixed;
+        width: 120px;
+        height: 120px;
+        background-color: red;
+        border-radius: 50%;
+        /* margin: -60px -60px; 아래 translate와 동일한 기능*/
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursorItem">
+      <span class="circle"></span>
+    </div>
+    <div class="gateBox">
+      <div class="top">
+        <p>마스크를 써야 하나요??</p>
+      </div>
+      <div class="bottom">
+        <a href="#yes">네</a>
+        <span class="line"></span>
+        <a href="#no">아니요</a>
+      </div>
+    </div>
+  </body>
+</html>
