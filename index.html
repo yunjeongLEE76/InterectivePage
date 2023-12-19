@@ -1,68 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <link>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        background-color: rgb(218, 215, 215);
-        height: 300vh;
-      }
-      h1 {
-        font-size: 35px;
-        padding: 20px;
-      }
-      .box {
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 1.5s ease-in-out;
-      }
-      .box img {
-        width: 160px;
-      }
-
-      button {
-        padding: 40px 100px;
-        background-color: black;
-        color: white;
-        font-size: 30px;
-        transition: all 0.5s ease-in-out;
-      }
-
-      button:hover {
-        padding: 45px 120px;
-        background-color: rgb(255, 249, 179);
-      }
-    </style>
+    <link rel="stylesheet" href="./css/sirup.css"></link>
+    <script src="./js/sirup.js" defer></script>
   </head>
   <body>
-    <h1></h1>
-    <div class="box">
-      <img src="./butterfly.gif" alt="나비" />
-    </div>
-    <button>버튼</button>
+<h1 class="title"><img src="./images/content-logo.svg" alt=""></h1>
+
+<div class="contWrap">
+    <div class="shadow"><img src="./images/content-panel-pc.webp" alt=""></div>
+
+    <div class="data"><img src="./images/content-date-pc.svg" alt=""></div>
+    
+    <div class="human"><img src="./images/content-artist.png" alt=""></div>
+
+    <div class="textImg"><img src="./images/content-rollbounce.png" alt=""></div>
+</div>
+
+<div class="subTitle">
+    <img src="./images/download.svg">
+</div>
   </body>
-
-  <script>
-    const h1 = document.querySelector("h1");
-    const box = document.querySelector(".box");
-    const button = document.querySelector("button");
-
-    button.addEventListener("mouseenter", () => {
-      // box.style.top = `${event.pageY}px`;
-      // box.style.left = `${event.pageX}px`;
-    });
-
-    window.addEventListener("click", (event) => {
-      h1.innerHTML = `x : ${event.pageX} y : ${event.pageY}`;
-
-      box.style.top = `${event.pageY}px`;
-      box.style.left = `${event.pageX}px`;
-    });
-  </script>
 </html>
